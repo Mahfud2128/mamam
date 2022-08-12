@@ -265,7 +265,7 @@ history -c
 echo "1.2" > /home/ver
 clear
 echo " "
-echo "===============================-{ mamam Premium }-=========================" | tee -a log-install.txt
+echo "===============================-{ Autoscript Premium }-=========================" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "--------------------------------------------------------------------------------" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
