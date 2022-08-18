@@ -143,7 +143,7 @@ wget -O cek-vless "https://raw.githubusercontent.com/Mahfud2128/mamam/main/cek-v
 wget -O cek-tr "https://raw.githubusercontent.com/Mahfud2128/mamam/main/cek-tr.sh"
 wget -O renew-ws "https://raw.githubusercontent.com/Mahfud2128/mamam/main/renew-ws.sh"
 wget -O renew-vless "https://raw.githubusercontent.com/Mahfud2128/mamam/main/renew-vless.sh"
-wget -O renew-tr "https://raw.githubusercontent.com/Mahfud2128/mamam/main/renew-tr.shsh"
+wget -O renew-tr "https://raw.githubusercontent.com/Mahfud2128/mamam/main/renew-tr.sh"
 wget -O add-l2tp "https://raw.githubusercontent.com/Mahfud2128/mamam/main/add-l2tp.sh"
 wget -O del-l2tp "https://raw.githubusercontent.com/Mahfud2128/mamam/main/del-l2tp.sh"
 wget -O add-pptp "https://raw.githubusercontent.com/Mahfud2128/mamam/main/add-pptp.sh"
