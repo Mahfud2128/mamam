@@ -224,16 +224,16 @@ wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/ssh-vpn.sh && chmod
 #install wireguard
 #wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
 #install v2ray
-wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
+#wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
 #install L2TP
 #wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
-wget -O set-br.sh https://raw.githubusercontent.com/Mahfud2128/mamam/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+#wget -O set-br.sh https://raw.githubusercontent.com/Mahfud2128/mamam/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 #install trojan-go
 #wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/ins-trgo.sh && dos2unix ins-trgo.sh && chmod +x ins-trgo.sh && ./ins-trgo.sh
 #install xray-grpc
-wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/xray-grpc.sh && chmod +x xray-grpc.sh && ./xray-grpc.sh
+#wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/xray-grpc.sh && chmod +x xray-grpc.sh && ./xray-grpc.sh
 #log
-wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/log.sh && dos2unix log.sh && chmod +x log.sh && ./log.sh
+#wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/log.sh && dos2unix log.sh && chmod +x log.sh && ./log.sh
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
 rm -f /root/ss.sh
