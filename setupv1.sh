@@ -220,7 +220,7 @@ wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/ssh-vpn.sh && chmod
 #wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
 #install ssr
 #wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
-wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
+#wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
 #install wireguard
 #wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
 #install v2ray
