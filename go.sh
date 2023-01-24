@@ -330,6 +330,8 @@ Documentation=https://www.v2ray.com/ https://www.v2fly.org/
 After=network.target nss-lookup.target
 
 [Service]
+LimitNOFILE=20480
+LimitNOFILEsoft=20480
 Type=simple
 User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
@@ -347,6 +349,8 @@ Description=V2Ray Service
 After=network.target nss-lookup.target
  
 [Service]
+LimitNOFILE=20480
+LimitNOFILEsoft=20480
 User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
