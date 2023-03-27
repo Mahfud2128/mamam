@@ -229,7 +229,7 @@ wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/ins-vt.sh && chmod 
 #wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
 wget -O set-br.sh https://raw.githubusercontent.com/Mahfud2128/mamam/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 #install trojan-go
-#wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/ins-trgo.sh && dos2unix ins-trgo.sh && chmod +x ins-trgo.sh && ./ins-trgo.sh
+wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/ins-trgo.sh && dos2unix ins-trgo.sh && chmod +x ins-trgo.sh && ./ins-trgo.sh
 #install xray-grpc
 wget https://raw.githubusercontent.com/Mahfud2128/mamam/main/xray-grpc.sh && chmod +x xray-grpc.sh && ./xray-grpc.sh
 #log
