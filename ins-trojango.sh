@@ -32,8 +32,6 @@ cat <<EOF > /etc/trojan-go/config.json
     "local_port": 2096,
     "remote_addr": "127.0.0.1",
     "remote_port": 81,
-    "log_level": 1,
-    "log_file": "/var/log/trojan-go.log",
     "password": [
         "$uuid"
     ],
