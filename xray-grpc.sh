@@ -280,7 +280,7 @@ cat > /etc/rare/xray/grpc/trojangrpc.json << END
     },
     "inbounds": [
         {
-            "port": 443,
+            "port": 44,
             "protocol": "trojan",
             "settings": {
                 "clients": [
