@@ -271,6 +271,61 @@ cat > /etc/xray/vlessgrpc.json << END
 }
 END
 
+cat > /etc/rare/xray/grpc/trojangrpc.json << END
+{
+    "log": {
+            "access": "/var/log/xray/access5.log",
+        "error": "/var/log/xray/error.log",
+        "loglevel": "info"
+    },
+    "inbounds": [
+        {
+            "port": 443,
+            "protocol": "trojan",
+            "settings": {
+                "clients": [
+                    {
+                        "password": "${uuid}"
+#xtrgrpc
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "gun",
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "$domain",
+                    "alpn": [
+                        "h2"
+                    ],
+                    "certificates": [
+                        {
+                            "certificateFile": "/etc/v2ray/v2ray.crt",
+                            "keyFile": "/etc/v2ray/v2ray.key"
+                        }
+                    ]
+                },
+                "grpcSettings": {
+                    "serviceName": "GunService"
+                }
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        }
+    ]
+}
+END
+
+cat > /etc/rare/xray/grpc/akuntrgrpc.conf << EOF
+#xray-trojangrpc user
+EOF
+
+
 
 cat > /etc/systemd/system/vmess-grpc.service << EOF
 [Unit]
@@ -304,6 +359,22 @@ RestartPreventExitStatus=23
 WantedBy=multi-user.target
 EOF
 
+cat > /etc/systemd/system/trgrpc.service << EOF
+[Unit]
+Description=XRay Trojan Grpc Service
+Documentation=https://speedtest.net https://github.com/XTLS/Xray-core
+After=network.target nss-lookup.target
+[Service]
+User=root
+NoNewPrivileges=true
+ExecStart=/etc/rare/xray/xray -config /etc/rare/xray/grpc/trojangrpc.json
+RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
+[Install]
+WantedBy=multi-user.target
+EOF
+
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 3380 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 3380 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 4480 -j ACCEPT
@@ -317,16 +388,30 @@ systemctl enable vmess-grpc
 systemctl restart vmess-grpc
 systemctl enable vless-grpc
 systemctl restart vless-grpc
+systemctl enable trgrpc.service
+systemctl start trgrpc.service
+systemctl restart xray.service
 #
 cd /usr/bin
 wget -O addgrpc "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/grpc/addgrpc.sh"
 wget -O delgrpc "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/grpc/delgrpc.sh"
 wget -O renewgrpc "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/grpc/renewgrpc.sh"
 wget -O cekgrpc "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/grpc/cekgrpc.sh"
+#trojan
+wget -O addtrgrpc "https://raw.githubusercontent.com/Denisuprapto/scriptws/main/grcp/addtrgrpc.sh"
+wget -O deltrgrpc "https://raw.githubusercontent.com/Denisuprapto/scriptws/main/grcp/deltrgrpc.sh"
+wget -O cektrgrpc "https://raw.githubusercontent.com/Denisuprapto/scriptws/main/grcp/cektrgrpc.sh"
+wget -O renewtrgrpc "https://raw.githubusercontent.com/Denisuprapto/scriptws/main/grcp/renewtrgrpc.sh"
+
 
 chmod +x addgrpc
 chmod +x delgrpc
 chmod +x renewgrpc
 chmod +x cekgrpc
+
+chmod +x addtrgrpc
+chmod +x deltrgrpc
+chmod +x cektrgrpc
+chmod +x renewtrgrpc
 
 rm -f xray-grpc.sh
