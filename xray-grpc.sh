@@ -271,7 +271,7 @@ cat > /etc/xray/vlessgrpc.json << END
 }
 END
 
-cat > /etc/rare/xray/grpc/trojangrpc.json << END
+cat > /etc/xray/trojangrpc.json << END
 {
     "log": {
             "access": "/var/log/xray/access5.log",
@@ -321,7 +321,7 @@ cat > /etc/rare/xray/grpc/trojangrpc.json << END
 }
 END
 
-cat > /etc/rare/xray/grpc/akuntrgrpc.conf << EOF
+cat > /etc/xray/akuntrgrpc.conf << EOF
 #xray-trojangrpc user
 EOF
 
@@ -367,7 +367,7 @@ After=network.target nss-lookup.target
 [Service]
 User=root
 NoNewPrivileges=true
-ExecStart=/etc/rare/xray/xray -config /etc/rare/xray/grpc/trojangrpc.json
+ExecStart=/usr/local/bin/xray -config /etc/xray/trojangrpc.json
 RestartPreventExitStatus=23
 LimitNPROC=10000
 LimitNOFILE=1000000
