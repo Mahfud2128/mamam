@@ -59,7 +59,7 @@ fi
 
 idtele=$(cat /root/.config/idtele)
 CHATID="$idtele"
-KEY="5318532626:AAH9spkuFm00gnYQAXNwKkvoeH_MTWn0u1A"
+KEY="6072068615:AAEjtOQS-UE9RuvTHzUOyOWR9D82_F-_sUs"
 TIME="10"
 BRL="https://api.telegram.org/bot$KEY/sendMessage"
 
