@@ -121,7 +121,7 @@ vmesslink1="vmess://$(base64 -w 0 /etc/v2ray/$user-tls.json)"
 vmesslink2="vmess://$(base64 -w 0 /etc/v2ray/$user-none.json)"
 idtele=$(cat /root/.config/idtele)
 CHATID="$idtele"
-KEY="5437053023:AAHl82bSN55xSrYa4YnmSfgcbrR6uzQUkww"
+KEY="6072068615:AAEjtOQS-UE9RuvTHzUOyOWR9D82_F-_sUs"
 TIME="10"
 BRL="https://api.telegram.org/bot$KEY/sendMessage"
 
