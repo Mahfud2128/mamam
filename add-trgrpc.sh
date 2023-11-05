@@ -53,6 +53,8 @@ Link TLS  : trojan://$uuid@$domain:443?path=/trojan-ws&security=tls&host=$domain
 END
 systemctl restart trgrpc
 clear
+echo -e "————————————————————————————————————————————————————" 
+echo -e "                   Trojan Account                  "
 echo -e "————————————————————————————————————————————————————"
 echo -e "Remarks       : ${user}"
 echo -e "Password      : ${uuid}"
