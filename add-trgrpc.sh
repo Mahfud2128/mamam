@@ -14,7 +14,7 @@ echo -e "${BB}——————————————————————
 echo -e "                  ${WB}Add Trojan Account${NC}                "
 echo -e "${BB}————————————————————————————————————————————————————${NC}"
 read -rp "User: " -e user
-user_EXISTS=$(grep -w $user /etc/xray/trgrpc.json | wc -l)
+user_EXISTS=$(grep -w $user /etc/xray/trojangrpc.json | wc -l)
 if [[ ${user_EXISTS} == '1' ]]; then
 clear
 echo -e "${BB}————————————————————————————————————————————————————${NC}"
@@ -29,7 +29,7 @@ done
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#xtrgrpc$/a\#& '"$user $exp"'\
-},{"password": "'""$$user""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
+},{"password": "'""$$user""'","email": "'""$user""'"' /usr/local/etc/xray/trojangrpc.json
 trojanlink1="trojan://$user@$domain:443?path=/trojan&security=tls&host=$domain&type=ws&sni=$domain#$user"
 cat > /var/www/html/trojan/trojan-$user.txt << END
 ==========================
