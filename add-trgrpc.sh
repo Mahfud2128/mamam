@@ -29,7 +29,7 @@ done
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#xtrgrpc$/a\### '"$user $exp"'\
-},{"password": "'""$user""'","email": "'""$user""'"' /usr/local/etc/xray/trojangrpc.json
+},{"password": "'""$user""'","email": "'""$user""'"' /etc/xray/trojangrpc.json
 trojanlink1="trojan://$user@$domain:443?path=/trojan-ws&security=tls&host=$domain&type=ws&sni=$domain#$user"
 cat > /var/www/html/trojan/trojan-$user.txt << END
 ==========================
@@ -52,13 +52,12 @@ Host: $domain
 Link TLS  : trojan://$uuid@$domain:443?path=/trojan-ws&security=tls&host=$domain&type=ws&sni=$domain#$user
 ==========================
 END
-ISP=$(cat /usr/local/etc/xray/org)
-CITY=$(cat /usr/local/etc/xray/city)
-systemctl restart trgrpc
 clear
 echo -e "————————————————————————————————————————————————————" 
 echo -e "Link TLS      : ${trojanlink1}" 
 echo -e "————————————————————————————————————————————————————" 
 read -n 1 -s -r -p "Press any key to back on menu"
 clear
+systemctl restart trgrpc
 trojan
+
