@@ -31,6 +31,7 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#xtrgrpc$/a\### '"$user $exp"'\
 },{"password": "'""$user""'","email": "'""$user""'"' /etc/xray/trojangrpc.json
 trojanlink1="trojan://$user@$domain:443?path=/trojan-ws&security=tls&host=$domain&type=ws&sni=$domain#$user"
+END
 ==========================
 Trojan WS (CDN) TLS
 ==========================
