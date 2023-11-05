@@ -31,26 +31,7 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#xtrgrpc$/a\### '"$user $exp"'\
 },{"password": "'""$user""'","email": "'""$user""'"' /etc/xray/trojangrpc.json
 trojanlink1="trojan://$user@$domain:443?path=/trojan-ws&security=tls&host=$domain&type=ws&sni=$domain#$user"
-END
-==========================
-Trojan WS (CDN) TLS
-==========================
-- name: Trojan-$user
-server: $domain
-port: 443
-type: trojan
-password: $user
-network: ws
-sni: $domain
-skip-cert-verify: true
-udp: true
-ws-opts:
-path: /trojan-ws
-headers:
-Host: $domain
-==========================
-Link TLS  : trojan://$uuid@$domain:443?path=/trojan-ws&security=tls&host=$domain&type=ws&sni=$domain#$user
-==========================
+
 END
 systemctl restart trgrpc
 service cron restart
